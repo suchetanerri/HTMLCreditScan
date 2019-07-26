@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+        <title>Scan credit card using iOS</title>
+
+        <style type="text/css">
+        /*<![CDATA[*/
+                   input {height:1.5em;width:95%}
+                   input[type="text"] {font-size: 2.5em}
+                   body {background-color:lightgray;font-size: 3em;font-family: sans-serif;}
+                   #purchase {font-size: 2em;font-weight: bold;height:1.2em}
+         /*]]>*/
+         
+        </style>
+
+</head>
+
+<body>
+
+        <form action="https://yoursite.com/credit-card-purchase" method="post">
+
+                <label for="nameoncard">Name on Card</label> 
+
+                <input autocomplete="cc-name" id="nameoncard" name="cc-name" type="text"> 
+
+                <label for="ccnumber">Credit Card Number</label> 
+
+                <input autocomplete="cc-number" id="ccnumber" name="addCreditCardNumber" type="text">
+
+                <label for="cc-exp-month">Expiration Month</label> 
+
+                <input autocomplete="cc-exp-month" id="cc-exp-month" name="cc-exp-month" type="text"> 
+
+                <label for="cc-exp-year">Expiration Year</label> 
+
+                <input autocomplete="cc-exp-year" id="cc-exp-year" name="cc-exp-year" type="text"> 
+
+                <label for="cvv2">CVV</label> <input autocomplete="cc-csc" id="cvv2" name="cvv2" type="text">
+
+                <input name="submit" type="submit" value="Submit">
+
+        </form>
+
+</body>
+
+</html>
