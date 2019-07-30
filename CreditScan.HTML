@@ -1,22 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript">
-// your JavaScript
-$(document).ready(function(){
-    $(".segmented label input[type=radio]").each(function(){
-        $(this).on("change", function(){
-            if($(this).is(":checked")){
-               $(this).parent().siblings().each(function(){
-                    $(this).removeClass("checked");
-                });
-                $(this).parent().addClass("checked");
-            }
-        });
-    });
-});
-</script>
-    
+    <script src="segment.js"></script>
 <style>
 .dropbtn {
   background-color: #4CAF50;
