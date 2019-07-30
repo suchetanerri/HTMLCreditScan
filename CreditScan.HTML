@@ -4,57 +4,170 @@
     
 <style>
     body {
-  background: #ffffff;
-  margin: 0;
-  padding: 0;
-}
-    ul {
-  position: relative;
-  margin: 125px auto 0;
-  padding: 0;
-  text-align: center;
+	background-color: darken(white, 10%);
+	text-align: center;
 }
 
-li {
-  display: inline-block;
-  list-style: none;
-  border: 2px solid #f9f9f9;
-  cursor: pointer;
-    &:nth-of-type(1) {
-    border-radius: 3px 0 0 3px;
-    border-right: none;
-  }
-  &:nth-of-type(3) {
-    border-radius: 0 3px 3px 0;
-    border-left: none;
-  }
+hr {
+	border-bottom: 1px dashed white;
+	border-top: 1px dashed lighten(black, 80%);
+	border: none;
 }
 
-button {
-  position: relative;
-  z-index: 1;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 8px 12px;
-  font-family: 'Open Sans', sans-serif;
-  letter-spacing: 1px;
-  border: none;
-  background: transparent;
-  color: #fff;
-  cursor: pointer;
-    &:focus {
-    outline: none;
-  }
+.taz_sgmtGrp {
+	display: inline-block;
+	font-size: 0; // Prevents "inline-block" attribute of buttons (taz_segmentedButton) to generate unwanted spaces between them. Comment this line to see by yourself.
+	margin: $size ($size / 2);
+	overflow: hidden;
+	&.taz_variant1 {
+		background-color: lighten(black, 80%);
+		background-color: white;
+		border-radius: $size;
+		border: 1px solid lighten(black, 80%);
+	}
+	&.taz_variant2 {
+		background: linear-gradient(to bottom, rgb(230,230,230) 0%, rgb(255,255,255) 100%);
+		border-bottom: 1px solid white;
+		border-radius: $size;
+		border-top: 1px solid grey;
+	}
+	&.taz_variant3 {
+		background: linear-gradient(to bottom, rgb(255,255,255) 0%, rgb(240,240,240) 50%, rgb(225,225,225) 51%, rgb(245,245,245) 100%);
+		border-bottom: 1px solid lighten(black, 70%);
+		border-radius: $size;
+		border-top: 1px solid white;
+		box-shadow: 0 0 3px fade-out(black, 0.8);
+	}
+	&.taz_variant4 {
+		border-radius: $size/3;
+		box-shadow: 1px 3px 2px fade-out(black, 0.7);
+	}
 }
 
-.highlight {
-  position: absolute;
-  top: 0;
-  display: block;
-  width: 1px;
-  height: 30px;
-  background: #f9f9f9;
-  transform-origin: 0;
+.taz_sgmtBtn {
+	background: none;
+	border: none;
+	display: inline-block;
+	font-size: $size*0.8; // We set back to font-size
+	line-height: $size;
+	padding: ($size / 2) $size;
+	text-transform: uppercase;
+	.taz_variant1 & {
+		color: lighten(black, 30%);
+		&:nth-child(even) {
+			border-left: 1px solid lighten(black, 80%);
+			&:not(:last-child) {
+				border-right: 1px solid lighten(black, 80%);
+			}
+		}
+		&:hover {
+			background-color: darken(white, 5%);
+			color: black;
+		}
+		&:active {
+			background-color: darken(white, 15%);
+		}
+	}
+	.taz_variant2 & {
+		color: lighten(black, 30%);
+		&:nth-child(even) {
+			border-left: 1px dotted lighten(black, 70%);
+			&:not(:last-child) {
+				border-right: 1px dotted lighten(black, 70%);
+			}
+		}
+		&:first-child {
+			border-bottom-left-radius: $size;
+			border-top-left-radius: $size;
+		}
+		&:last-child {
+			border-bottom-right-radius: $size;
+			border-top-right-radius: $size;
+		}
+		&:hover {
+			box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1);
+			color: black;
+		}
+		&:active {
+			box-shadow: inset 0 0px 10px rgb(0, 128, 128);
+		}
+	}
+	.taz_variant3 & {
+		color: black;
+		&:nth-child(even) {
+			border-left: 1px solid lighten(black, 80%);
+			&:not(:last-child) {
+				border-right: 1px solid lighten(black, 80%);
+			}
+		}
+		&:hover {
+			background-color: fade-out(black, 0.95);
+		}
+		&:active {
+			color: rgb(0, 128, 180);
+			text-shadow: 0 0 20px rgb(0, 128, 180);
+		}
+	}
+	.taz_variant4 & {
+		background: linear-gradient(to bottom, rgb(80,80,80) 0%, rgb(30,30,30) 100%);
+		border-bottom: 2px solid black;
+		border-top: 2px solid lighten(black, 50%);
+		color: lighten(black, 50%);
+		text-shadow: -1px -1px 0 black;
+		&:nth-child(even) {
+			border-left: 1px solid black;
+			&:not(:last-child) {
+				border-right: 1px solid black;
+			}
+		}
+		&:first-child {
+			border-bottom-left-radius: $size/3;
+			border-top-left-radius: $size/3;
+		}
+		&:last-child {
+			border-bottom-right-radius: $size/3;
+			border-top-right-radius: $size/3;
+		}
+		&:hover {
+			color: darken(white, 20%);
+			position: relative;
+			&:before {
+				background-color: rgb(0, 220, 0);
+				box-shadow: 0 0 20px 10px rgb(0, 220, 0);
+				content: '';
+				height: 2px;
+				left: 0;
+				margin-left: auto;
+				margin-right: auto;
+				position: absolute;
+				right: 0;
+				top: 0px;
+				width: $size/2;
+			}
+		}
+		&:active {
+			border-top: 2px solid lighten(black, 10%);
+			box-shadow: inset 0 0px 10px black;
+			color: rgb(0, 220, 0);
+			font-size: 0.75rem;
+			overflow: hidden;
+			padding-left: 1.125rem;
+			padding-right: 1.125rem;
+			&:before {
+				width: $size/2*0.8;
+			}
+			&:after {
+				background-color: rgb(0, 220, 0);
+				bottom: 0px;
+				box-shadow: 0 0 10px 4px rgb(0, 220, 0);
+				content: '';
+				height: 0;
+				left: 0;
+				position: absolute;
+				right: 0;
+			}
+		}
+	}
 }
 .dropbtn {
   background-color: #00000;
@@ -156,9 +269,12 @@ $(document).ready(function(){
 
 <body>
 <p>Select payment type for current service order</p>
-    <ul>
-  <li><button>Following</button></li><li><button>Top</button></li><li><button>Recent</button></li><li class="highlight"></li>
-</ul>
+    <div class="taz_sgmtGrp taz_variant1">
+	<button class="taz_sgmtBtn">Action 1</button>
+	<button class="taz_sgmtBtn">Action 2</button>
+	<button class="taz_sgmtBtn">Action 3</button>
+	<button class="taz_sgmtBtn">Action 4</button>
+</div>
 <div class="container">
   <div class="segmented">
     <label class="checked"><input type="radio" name="segmented" /> cash</label>
