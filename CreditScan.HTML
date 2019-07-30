@@ -1,7 +1,22 @@
 <!DOCTYPE html>
-
-<!DOCTYPE html>
 <html>
+<head>
+<script type="text/javascript">
+// your JavaScript
+$(document).ready(function(){
+    $(".segmented label input[type=radio]").each(function(){
+        $(this).on("change", function(){
+            if($(this).is(":checked")){
+               $(this).parent().siblings().each(function(){
+                    $(this).removeClass("checked");
+                });
+                $(this).parent().addClass("checked");
+            }
+        });
+    });
+});
+</script>
+</head>
 <style>
 .dropbtn {
   background-color: #4CAF50;
@@ -37,9 +52,72 @@
 .dropdown-content a:hover {background-color: #f1f1f1;}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.container{padding:20px;margin:20px 0;}
+.bg{background:#167efb;color:#167efb;}
+
+/* Radio group */
+.segmented {
+    display:flex;
+    flex-flow:row wrap;
+    box-sizing:border-box;
+    font-family:"Helvetica Neue";
+    font-size:90%;
+    text-align:center;
+}
+.segmented label {
+    display:block;
+    flex:1;
+    box-sizing:border-box;
+    border:1px solid #167efb;
+    border-right:none;
+    color:#167efb;
+    margin:0;
+    padding:.4em;
+    cursor: pointer;
+    user-select:none;
+    -webkit-user-select:none;
+}
+.segmented label.checked {
+    background:#167efb;
+    color:#fff;
+}
+.segmented.inverted label {
+    border-color:#fff;
+    color:#fff;
+    background:none;
+}
+.segmented.inverted label.checked {
+    background:#fff;
+    color:inherit;
+}
+.segmented label:first-child {
+    border-radius:.4em 0 0 .4em;
+    border-right:0;
+}
+.segmented label:last-child {
+    border-radius:0 .4em .4em 0;
+    border-right:1px solid;
+}
+.segmented input[type="radio"] {
+    appearance:none;
+    -webkit-appearance:none;
+    margin:0;
+    position: absolute;
+}
+
 </style>
+
 <body>
 <p>Select payment type for current service order</p>
+<div class="container">
+  <div class="segmented">
+    <label class="checked"><input type="radio" name="segmented" /> cash</label>
+    <label><input type="radio" name="segmented" /> Check</label>
+    <label><input type="radio" name="segmented" /> Credit</label>
+    <label><input type="radio" name="segmented" /> Charge Account</label>
+  </div>
+</div>
 <form action="/action_page.php">
   Credit Card: <input type="text" name="email" size="25"> <input type="submit" value="Scan"><br><br>
   Name on Card: <input type="text" name="email" size="25"><br><br>
@@ -61,4 +139,3 @@
 
 </body>
 </html>
-
