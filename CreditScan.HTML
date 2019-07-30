@@ -92,7 +92,20 @@
 }
 
 </style>
-<script src="segment.js"></script>
+<script>
+$(document).ready(function(){
+    $(".segmented label input[type=radio]").each(function(){
+        $(this).on("change", function(){
+            if($(this).is(":checked")){
+               $(this).parent().siblings().each(function(){
+                    $(this).removeClass("checked");
+                });
+                $(this).parent().addClass("checked");
+            }
+        });
+    });
+});    
+</script>
 </head>
 
 <body>
@@ -101,7 +114,7 @@
   <div class="segmented">
     <label class="checked"><input type="radio" name="segmented" /> cash</label>
     <label><input type="radio" name="segmented" /> Check</label>
-    <label><input type="radio" name="segmented" /> Credit1</label>
+    <label><input type="radio" name="segmented" /> Credit</label>
     <label><input type="radio" name="segmented" /> Charge Account</label>
   </div>
 </div>
