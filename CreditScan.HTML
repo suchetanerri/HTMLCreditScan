@@ -3,6 +3,43 @@
 <head>
     
 <style>
+    ul {
+  position: relative;
+  margin: 125px auto 0;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+  list-style: none;
+  border: 2px solid $active;
+  cursor: pointer;
+}
+
+button {
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 8px 12px;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.highlight {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 1px;
+  height: 30px;
+  background: $active;
+  transform-origin: 0;
+}
 .dropbtn {
   background-color: #00000;
   color: black;
@@ -103,6 +140,9 @@ $(document).ready(function(){
 
 <body>
 <p>Select payment type for current service order</p>
+    <ul>
+  <li><button>Following</button></li><li><button>Top</button></li><li><button>Recent</button></li><li class="highlight"></li>
+</ul>
 <div class="container">
   <div class="segmented">
     <label class="checked"><input type="radio" name="segmented" /> cash</label>
