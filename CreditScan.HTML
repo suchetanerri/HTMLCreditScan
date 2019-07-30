@@ -20,6 +20,14 @@ li {
   list-style: none;
   border: 2px solid #0F90C0;
   cursor: pointer;
+    &:nth-of-type(1) {
+    border-radius: 3px 0 0 3px;
+    border-right: none;
+  }
+  &:nth-of-type(3) {
+    border-radius: 0 3px 3px 0;
+    border-left: none;
+  }
 }
 
 button {
@@ -34,6 +42,9 @@ button {
   background: transparent;
   color: #fff;
   cursor: pointer;
+    &:focus {
+    outline: none;
+  }
 }
 
 .highlight {
