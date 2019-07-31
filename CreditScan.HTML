@@ -1,55 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="CreditScan.css">
-<script type="text/javascript">
-$(document).ready(function(){
-    $(".segmented label input[type=radio]").each(function(){
-        $(this).on("change", function(){
-            if($(this).is(":checked")){
-               $(this).parent().siblings().each(function(){
-                    $(this).removeClass("checked");
-                });
-                $(this).parent().addClass("checked");
-            }
-        });
-    });
-});    
-</script>
-</head>
-
-<body>
-<p>Select payment type for current service order</p>
-	<div class="container">
-<div class="container">
-  <div class="segmented">
-    <label class="checked"><input type="radio" name="segmented" /> cash</label>
-    <label><input type="radio" name="segmented" /> Check1</label>
-    <label><input type="radio" name="segmented" /> Credit</label>
-    <label><input type="radio" name="segmented" /> Charge Account</label>
-  </div>
-</div>
-<form action="/action_page.php">
-  Credit Card: <input autocomplete="cc-number" id="ccnumber" type="text" name="addCreditCardNumber" size="25"><br><br>
-  Name on Card: <input autocomplete="cc-name" id="nameoncard" type="text" name="email" size="25"><br><br>
-  Expiration Date: <input autocomplete="cc-exp-month" id="cc-exp-month" type="text" name="pin" maxlength="4" size="4">  <input autocomplete="cc-exp-year" id="cc-exp-year" type="text" name="pin" maxlength="4" size="4"><br><br>
-  <div class="dropdown">
-  Credit Type: <button class="dropbtn">Select Card Type</button>
-  <div class="dropdown-content">
-    <a href="#">Master</a>
-    <a href="#">Visa</a>
-    <a href="#">Rupay</a>
-  </div>
-</div><br><br>
-  Amount: <input type="text" name="email" size="25"><br><br>
-  
-
-  <input type="submit" value="Submit" style="background-color:#d13737;color:white;width:250px;
-height:40px;"><br><br>
-  <input type="submit" value="Cancel" style="background-color:#d13737;color:white;width:250px;
-height:40px;">
-</form>
-
-</body>
+    <head>
+        <link rel="stylesheet" type="text/css" href="CreditScan.css">
+            <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    
+    <body>
+        <p>Select payment type for current service order</p>
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default">cash</button>
+            <button type="button" class="btn btn-default">Check</button>
+            <button type="button" class="btn btn-default">Credit</button>
+            <button type="button" class="btn btn-default">Charge Account</button>
+        </div><br><br>
+            <form action="/action_page.php">
+                Credit Card: <input autocomplete="cc-number" id="ccnumber" type="text" name="addCreditCardNumber" size="25"> <input type="submit" value="Scan"><br><br>
+                    Name on Card: <input autocomplete="cc-name" id="nameoncard" type="text" name="email" size="25"><br><br>
+                        Expiration Date: <input autocomplete="cc-exp-month" id="cc-exp-month" type="text" name="pin" maxlength="4" size="4">  <input autocomplete="cc-exp-year" id="cc-exp-year" type="text" name="pin" maxlength="4" size="4"><br><br>
+                            <div class="dropdown">
+                                 Credit Type: <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    Select Card
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="#">Master</a></li>
+                                    <li><a href="#">Visa</a></li>
+                                    <li><a href="#">Rupay</a></li>
+                                    
+                                </ul>
+                            </div><br>
+                            Amount: <input type="text" name="email" size="25"><br><br>
+                                
+                                
+                                <input type="submit" value="Submit" style="background-color:#d13737;color:white;width:250px;
+                                    height:40px;"><br><br>
+                                    <input type="submit" value="Cancel" style="background-color:#d13737;color:white;width:250px;
+                                        height:40px;">
+            </form>
+            
+    </body>
 </html>
-
