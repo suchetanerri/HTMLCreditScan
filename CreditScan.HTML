@@ -9,12 +9,24 @@
                         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
                         <link rel="stylesheet" href="css/bootstrap.min.css">
                         <link rel="stylesheet" href="css/custom.css">
+                            <script>
+                                $(document).ready(function(){
+                                                  $("#btnDone").click(function(e){
+                                                                      showMsg();
+                                                                      
+                                                                      });
+                                                  
+                                                  });
+                                                  function showMsg(){
+                                                      alert("hello");
+                                                  }
+                                </script>
     </head>
     
     <body>
         <br>
         <div style="background-color:#d13737;width:390Px;">
-            &nbsp;&nbsp;<button style="background-color:#d13737;color:white;border-color:#d13737;" type="button" class="btn btn-default">Done</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label style="color:white">Payments Method</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="background-color:#d13737;color:white;border-color:#d13737;" type="button" class="btn btn-default">Finish</button>
+            &nbsp;&nbsp;<button style="background-color:#d13737;color:white;border-color:#d13737;" type="button" class="btn btn-default" id="btnDone">Done</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label style="color:white">Payments Method</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="background-color:#d13737;color:white;border-color:#d13737;" type="button" class="btn btn-default">Finish</button>
         </div>
         
         <p>&nbsp;&nbsp;Select payment type for current service order</p>
@@ -41,7 +53,7 @@
                             &nbsp;&nbsp;<label>Amount:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="email" size="25"><br><br>
                                 
                                 
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Submit" style="background-color:#d13737;color:white;width:250px;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Swipe" style="background-color:#d13737;color:white;width:250px;
                                     height:40px;"><br><br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Cancel" style="background-color:#d13737;color:white;width:250px;
                                         height:40px;">
