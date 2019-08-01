@@ -23,7 +23,7 @@
                                 </script>
     </head>
     
-    <body style="overflow-x: hidden;">
+    <body>
         <br>
         <div style="background-color:#d13737;width:390Px;">
             &nbsp;&nbsp;<button style="background-color:#d13737;color:white;border-color:#d13737;" type="button" class="btn btn-default" id="btnDone">Done</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label style="color:white">Payments Method</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="background-color:#d13737;color:white;border-color:#d13737;" type="button" class="btn btn-default">Finish</button>
@@ -31,7 +31,7 @@
         
         <p>&nbsp;&nbsp;Select payment type for current service order</p>
         &nbsp;&nbsp;<div class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-default">cash 1</button>
+            <button type="button" class="btn btn-default">cash</button>
             <button type="button" class="btn btn-default">Check</button>
             <button type="button" class="btn btn-default">Credit</button>
             <button type="button" class="btn btn-default">Charge Account</button>
@@ -40,7 +40,7 @@
             <form action="/action_page.php">
                 &nbsp;&nbsp;<label> Credit Card:</label> &nbsp;&nbsp;&nbsp;&nbsp; <input autocomplete="cc-number" id="ccnumber" type="text" name="addCreditCardNumber" size="25"><br><br>
                     &nbsp;&nbsp;<label>Name on Card:</label> &nbsp;<input autocomplete="cc-name" id="nameoncard" type="text" name="email" size="25"><br><br>
-                        &nbsp;&nbsp;<label>Expiration Date:</label> <input autocomplete="cc-exp-month" id="cc-exp-month" type="text" name="pin" maxlength="4" size="4">  <input autocomplete="cc-exp-year" id="cc-exp-year" type="text" name="pin" maxlength="4" size="4"><br><br>
+                        &nbsp;&nbsp;<label>Expiration Date:</label> <input autocomplete="cc-exp-month" id="cc-exp-month" type="text" name="pin" maxlength="4" size="4">  <input autocomplete="cc-exp-year" id="cc-exp-year" type="text" name="pin" maxlength="4" size="6"><br><br>
                             <div>
                                  &nbsp;&nbsp;<label>Credit Type:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                  <select>
