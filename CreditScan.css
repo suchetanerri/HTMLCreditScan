@@ -1,4 +1,7 @@
-
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 .dropbtn {
   background-color: #00000;
   color: black;
