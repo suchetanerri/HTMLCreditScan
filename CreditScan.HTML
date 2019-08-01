@@ -12,9 +12,13 @@
     </head>
     
     <body>
-        <button type="button" class="btn btn-default">Done</button> Payments Method <button type="button" class="btn btn-default">Finish</button>
-        <p>Select payment type for current service order</p>
-        <div class="btn-group" role="group" aria-label="...">
+        <br>
+        <div style="background-color:#d13737;">
+            &nbsp;&nbsp;<button style="background-color:#d13737;color:white" type="button" class="btn btn-default">Done</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label style="color:white">Payments Method</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button style="background-color:#d13737;color:white" type="button" class="btn btn-default">Finish</button>
+        </div>
+        
+        <p>&nbsp;&nbsp;Select payment type for current service order</p>
+        &nbsp;&nbsp;<div class="btn-group" role="group" aria-label="...">
             <button type="button" class="btn btn-default">cash</button>
             <button type="button" class="btn btn-default">Check</button>
             <button type="button" class="btn btn-default">Credit</button>
@@ -22,11 +26,11 @@
         </div><br><br>
         
             <form action="/action_page.php">
-                Credit Card: <input autocomplete="cc-number" id="ccnumber" type="text" name="addCreditCardNumber" size="25"> <input type="submit" value="Scan"><br><br>
-                    Name on Card: <input autocomplete="cc-name" id="nameoncard" type="text" name="email" size="25"><br><br>
-                        Expiration Date: <input autocomplete="cc-exp-month" id="cc-exp-month" type="text" name="pin" maxlength="4" size="4">  <input autocomplete="cc-exp-year" id="cc-exp-year" type="text" name="pin" maxlength="4" size="4"><br><br>
+                &nbsp;&nbsp;Credit Card: &nbsp;&nbsp;&nbsp;&nbsp; <input autocomplete="cc-number" id="ccnumber" type="text" name="addCreditCardNumber" size="25"><br><br>
+                    &nbsp;&nbsp;Name on Card: &nbsp;<input autocomplete="cc-name" id="nameoncard" type="text" name="email" size="25"><br><br>
+                        &nbsp;&nbsp;Expiration Date: <input autocomplete="cc-exp-month" id="cc-exp-month" type="text" name="pin" maxlength="4" size="4">  <input autocomplete="cc-exp-year" id="cc-exp-year" type="text" name="pin" maxlength="4" size="4"><br><br>
                             <div class="dropdown">
-                                 Credit Type: <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                 &nbsp;&nbsp;Credit Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="btn btn-default btn-lg dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     Select Card
                                     <span class="caret"></span>
                                 </button>
@@ -37,12 +41,12 @@
                                     
                                 </ul>
                             </div><br>
-                            Amount: <input type="text" name="email" size="25"><br><br>
+                            &nbsp;&nbsp;Amount:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="email" size="25"><br><br>
                                 
                                 
-                                <input type="submit" value="Submit" style="background-color:#d13737;color:white;width:250px;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Submit" style="background-color:#d13737;color:white;width:250px;
                                     height:40px;"><br><br>
-                                    <input type="submit" value="Cancel" style="background-color:#d13737;color:white;width:250px;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Cancel" style="background-color:#d13737;color:white;width:250px;
                                         height:40px;">
             </form>
             
