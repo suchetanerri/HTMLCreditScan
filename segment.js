@@ -10,3 +10,7 @@ $(document).ready(function(){
         });
     });
 });
+function myJavascriptFunction() {
+    // Your javascript code to bring data from database.
+    alert("Credit card details.");
+}
