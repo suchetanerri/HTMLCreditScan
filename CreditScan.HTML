@@ -9,7 +9,7 @@
                         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
                         <link rel="stylesheet" href="css/bootstrap.min.css">
                         <link rel="stylesheet" href="css/custom.css">
-                            <script src="segment.js">
+                            <script>
                                 $(document).ready(function(){
                                                   $("#btnDone").click(function(e){
                                                                       showMsg();
@@ -17,10 +17,36 @@
                                                                       });
                                                   
                                                   });
+                                                  
                                                   function showMsg(){
                                                       alert("hello");
                                                   }
-                                
+                            
+                            function myJavascriptFunction() {
+                                // Your javascript code to bring data from database.
+                                //alert("Credit card details.");
+                                var ccnumber = $("#ccnumber").val();
+                                $.ajax({
+                                       type: "GET",
+                                       url: "https://reqres.in/api/users?page=2",
+                                       data: {},
+                                       contentType: "application/json; charset=utf-8",
+                                       dataType: "json",
+                                       cache: false,
+                                       async: false,
+                                       success: function(data){
+                                       debugger
+                                       $.each(data.data,function(index,item){
+                                              console.log(item.email);
+                                              });
+                                       //alert("Credit card details." + data);
+                                       },
+                                       error: function (err) {
+                                       debugger
+                                       alert("An error has occured. Please try again."+err.ResponseText);
+                                       }
+                                       });
+                            }
                                 </script>
     </head>
     
@@ -38,10 +64,10 @@
             <button type="button" class="btn btn-default">Charge Account</button>
         </div><br><br>
         
-            <form>
+            <form >
                 &nbsp;&nbsp;<label> Credit Card:</label> &nbsp;&nbsp;&nbsp;&nbsp; <input autocomplete="cc-number" id="ccnumber" type="text" name="addCreditCardNumber" size="25"><br><br>
                     &nbsp;&nbsp;<label>Name on Card:</label> &nbsp;<input autocomplete="cc-name" id="nameoncard" type="text" name="email" size="25"><br><br>
-                        &nbsp;&nbsp;<label>Expiration Date:</label> <input autocomplete="cc-exp-month" id="cc-exp-month" type="text" name="pin" maxlength="4" size="4">  <input autocomplete="cc-exp-year" id="cc-exp-year" type="text" name="pin" maxlength="4" size="6"><br><br>
+                        &nbsp;&nbsp;<label>Expiration Date:</label> <input autocomplete="cc-exp-month" id="cc-exp-month" type="text" name="pin" maxlength="4" size="4">  <input autocomplete="cc-exp-year" id="cc-exp-year" type="text" name="pin" maxlength="4" size="4"><br><br>
                             <div>
                                  &nbsp;&nbsp;<label>Credit Type:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                  <select>
