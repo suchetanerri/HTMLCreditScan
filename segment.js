@@ -22,7 +22,7 @@ function myJavascriptFunction() {
         cache: false,
         async: false,
         success: function(data){
-            alert("Credit card details." + data);
+//             alert("Credit card details" + data);
                 },
         error: function (err) {
            // alert("An error has occured. Please try again."+err.ResponseText);
