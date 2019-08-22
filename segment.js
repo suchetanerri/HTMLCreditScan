@@ -15,7 +15,7 @@ function myJavascriptFunction() {
     
     $.ajax({
         type: "GET",
-        url: "http://api.plos.org/search?q=title:DNA",
+        url: "https://websvcdev.cleanharbors.com/MobileInventoryService/IBCFulfill/IBCFulfillDetails/21B520XIBC350/97BPO/BPO",
 //         data: JSON.stringify(data),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
