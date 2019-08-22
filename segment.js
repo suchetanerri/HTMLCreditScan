@@ -12,5 +12,21 @@ $(document).ready(function(){
 });
 function myJavascriptFunction() {
     // Your javascript code to bring data from database.
-    alert("Credit card details.");
+    
+    $.ajax({
+        type: "GET",
+        url: "http://api.plos.org/search?q=title:DNA",
+//         data: JSON.stringify(data),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        cache: false,
+        async: false,
+        success: function(data){
+            alert("Credit card details." + data);
+                },
+        error: function (err) {
+           // alert("An error has occured. Please try again."+err.ResponseText);
+        }
+    });
+ 
 }
